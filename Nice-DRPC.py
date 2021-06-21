@@ -95,7 +95,6 @@ except Exception as e:
         if "y" in open_github_repository:webopen("https://github.com/Rex-Hm/Discord-Nice-RPC")
         else:pass
         
-        input("\nPress enter to exit.")
     else:
         try:
             if e.errno == 104:
