@@ -5,9 +5,9 @@
  # Downloads
  __Windows 10__: https://github.com/Rex-Hm/Discord-Nice-RPC/releases
  
- __Linux__: you can directly download the source code and run it (Nice-DRPC.py)
+ __Linux__: https://github.com/Rex-Hm/Discord-Nice-RPC/releases
  
- __Mac__: Not available
+ __Mac__: Not available (Maybe soon)
 
 # Configuring application
 To configure our RPC we must modify the config.json file located in the same folder as the application,
