@@ -1,5 +1,7 @@
 # A easy Discord Rich Presence
  a nice Rich Presence for Discord that you can customize as you like
+ only available for Windows 10, I'm not sure if it will ever have support for Windows 7, at least not the version with Python
+ 
 
 # Configuring application
 To configure our RPC we must modify the config.json file located in the same folder as the application,
