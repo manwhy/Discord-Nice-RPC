@@ -1,11 +1,9 @@
-import os
-import json
-import tkinter
+import os,json,tkinter
+from time import time
+from webbrowser import open as webopen
+from pypresence import Presence
 from tkinter import ttk
 from tkinter.constants import E, END, LEFT, RIGHT, W
-from time import time
-from pypresence import Presence
-from webbrowser import open as webopen
 
 class Colors:
     """Color variables"""
@@ -18,8 +16,8 @@ class App:
         self.ErrorWindow = tkinter.Toplevel()
         self.ErrorWindow.title("Nice DRPC - Error")
         self.ErrorWindow.config(bg=Color.dark_gray)
-        self.ErrorLabel = tkinter.Label(self.ErrorWindow,text="An error has occurred, more information will be displayed below:\n\n -{0}".format(error),font="google 10 bold",bg=Color.dark_gray).pack(padx=10,pady=10)
-        self.ErrorLabel = tkinter.Label(self.ErrorWindow,text="Press X to close the window",font="google 10 bold",bg=Color.dark_gray).pack(padx=10,pady=10)
+        self.ErrorLabel = tkinter.Label(self.ErrorWindow,text="An error has occurred, more information will be displayed below:\n\n -{0}".format(error),fg="white",font="google 10 bold",bg=Color.dark_gray).pack(padx=10,pady=10)
+        self.ErrorLabel = tkinter.Label(self.ErrorWindow,text="Press X to close the window",fg="white",font="google 10 bold",bg=Color.dark_gray).pack(padx=10,pady=10)
 
     def __init__(self):
         self.AppWindow = tkinter.Tk()
@@ -31,15 +29,15 @@ class App:
         self.AppWindow.config(bg=Color.dark_gray)
         self.emptySpace = tkinter.Label(self.AppWindow,bg=Color.dark_gray)
         self.emptySpace.pack(pady=1)
-        self.title = tkinter.Label(self.AppWindow,text="Welcome to Nice DRPC",font="google 22 bold",bg=Color.dark_gray)
+        self.title = tkinter.Label(self.AppWindow,text="Welcome to Nice DRPC",fg="white",font="google 22 bold",bg=Color.dark_gray)
         self.title.pack()
-        self.subtitle = tkinter.Label(self.AppWindow,text="An easy way to set up your Discord Rich Presence",font="google 11",bg=Color.dark_gray)
+        self.subtitle = tkinter.Label(self.AppWindow,text="An easy way to set up your Discord Rich Presence",fg="white",font="google 11",bg=Color.dark_gray)
         self.subtitle.pack()
         self.emptySpace2 = tkinter.Label(self.AppWindow,bg=Color.dark_gray)
         self.emptySpace2.pack(pady=1)
-        self.title2 = tkinter.Label(self.AppWindow,text="Select your presence",font="google 20 bold",bg=Color.dark_gray)
+        self.title2 = tkinter.Label(self.AppWindow,text="Select your presence",fg="white",font="google 20 bold",bg=Color.dark_gray)
         self.title2.pack()
-        self.RunningPresenceMessage = tkinter.Label(self.AppWindow,text="",font="google 10 bold",bg=Color.dark_gray)
+        self.RunningPresenceMessage = tkinter.Label(self.AppWindow,text="",fg="white",font="google 10 bold",bg=Color.dark_gray)
         self.RunningPresenceMessage.place(x=15,y=400)
         #Presence List
         self.presenceList = ttk.Treeview(self.AppWindow,height=10,)
@@ -80,28 +78,28 @@ class App:
         self.CreatePresenceWindow.geometry("500x330")
         self.CreatePresenceWindow.config(bg=Color.dark_gray)
         #Entrys
-        self.clientId_Label = tkinter.Label(self.CreatePresenceWindow,text="*Client ID",font="google 10",justify=LEFT,bg=Color.dark_gray).grid(row=0,column=0)
+        self.clientId_Label = tkinter.Label(self.CreatePresenceWindow,text="*Client ID",fg="white",font="google 10",justify=LEFT,bg=Color.dark_gray).grid(row=0,column=0)
         self.clientId_Entry = tkinter.Entry(self.CreatePresenceWindow,width=30)
         self.clientId_Entry.grid(row=1,column=0)
-        self.ShowTime_Label = tkinter.Label(self.CreatePresenceWindow,text="Show Time Playing (True/False)",font="google 10",justify=LEFT,bg=Color.dark_gray).grid(row=0,column=1)
+        self.ShowTime_Label = tkinter.Label(self.CreatePresenceWindow,text="Show Time Playing (True/False)",fg="white",font="google 10",justify=LEFT,bg=Color.dark_gray).grid(row=0,column=1)
         self.ShowTime_Entry = tkinter.Entry(self.CreatePresenceWindow,width=30)
         self.ShowTime_Entry.grid(row=1,column=1)
-        self.state_Label = tkinter.Label(self.CreatePresenceWindow,text="State",font="google 10",justify=LEFT,bg=Color.dark_gray).grid(row=2,column=0)
+        self.state_Label = tkinter.Label(self.CreatePresenceWindow,text="State",fg="white",font="google 10",justify=LEFT,bg=Color.dark_gray).grid(row=2,column=0)
         self.state_Entry = tkinter.Entry(self.CreatePresenceWindow,width=30)
         self.state_Entry.grid(row=3,column=0)
-        self.details_Label = tkinter.Label(self.CreatePresenceWindow,text="Details",font="google 10",justify=LEFT,bg=Color.dark_gray).grid(row=2,column=1)
+        self.details_Label = tkinter.Label(self.CreatePresenceWindow,text="Details",fg="white",font="google 10",justify=LEFT,bg=Color.dark_gray).grid(row=2,column=1)
         self.details_Entry = tkinter.Entry(self.CreatePresenceWindow,width=30)
         self.details_Entry.grid(row=3,column=1)
-        self.largeImage_Label = tkinter.Label(self.CreatePresenceWindow,text="Large Image",font="google 10",justify=LEFT,bg=Color.dark_gray).grid(row=4,column=0)
+        self.largeImage_Label = tkinter.Label(self.CreatePresenceWindow,text="Large Image",fg="white",font="google 10",justify=LEFT,bg=Color.dark_gray).grid(row=4,column=0)
         self.largeImage_Entry = tkinter.Entry(self.CreatePresenceWindow,width=30)
         self.largeImage_Entry.grid(row=5,column=0)
-        self.smallImage_Label = tkinter.Label(self.CreatePresenceWindow,text="Small Image (Large Image is obligatory)",font="google 10",justify=LEFT,bg=Color.dark_gray).grid(row=4,column=1)
+        self.smallImage_Label = tkinter.Label(self.CreatePresenceWindow,text="Small Image (Large Image is obligatory)",fg="white",font="google 10",justify=LEFT,bg=Color.dark_gray).grid(row=4,column=1)
         self.smallImage_Entry = tkinter.Entry(self.CreatePresenceWindow,width=30)
         self.smallImage_Entry.grid(row=5,column=1)
-        self.largeText_Label = tkinter.Label(self.CreatePresenceWindow,text="Large Text (Large Image is obligatory)",font="google 10",justify=LEFT,bg=Color.dark_gray).grid(row=6,column=0)
+        self.largeText_Label = tkinter.Label(self.CreatePresenceWindow,text="Large Text (Large Image is obligatory)",fg="white",font="google 10",justify=LEFT,bg=Color.dark_gray).grid(row=6,column=0)
         self.largeText_Entry = tkinter.Entry(self.CreatePresenceWindow,width=30)
         self.largeText_Entry.grid(row=7,column=0)
-        self.smallText_Label = tkinter.Label(self.CreatePresenceWindow,text="Small Text (Small Image is obligatory)",font="google 10",justify=LEFT,bg=Color.dark_gray).grid(row=6,column=1)
+        self.smallText_Label = tkinter.Label(self.CreatePresenceWindow,text="Small Text (Small Image is obligatory)",fg="white",font="google 10",justify=LEFT,bg=Color.dark_gray).grid(row=6,column=1)
         self.smallText_Entry = tkinter.Entry(self.CreatePresenceWindow,width=30)
         self.smallText_Entry.grid(row=7,column=1)
         #Buttons
@@ -110,7 +108,7 @@ class App:
         self.Buttons2_Label = tkinter.Button(self.CreatePresenceWindow,text="New Button",command=lambda:self.CreatePresenceButtons(1,self.CreatePresenceWindow),width=20)
         self.Buttons2_Label.grid(row=8,column=1,columnspan=1,rowspan=1,padx=10,pady=15)
         #Save presence
-        self.nameLabel = tkinter.Label(self.CreatePresenceWindow,text="Save presence as",font="google 10 bold",justify=LEFT,bg=Color.dark_gray).grid(row=11,column=0)
+        self.nameLabel = tkinter.Label(self.CreatePresenceWindow,text="Save presence as",fg="white",font="google 10 bold",justify=LEFT,bg=Color.dark_gray).grid(row=11,column=0)
         self.nameEntry = tkinter.Entry(self.CreatePresenceWindow,width=25)
         self.nameEntry.grid(row=12,column=0,columnspan=1,padx=5)
         self.NewPresenceButton = tkinter.Button(self.CreatePresenceWindow,text="Save Presence", command=lambda:self.SavePresence(self.CreatePresenceWindow),width=20).grid(row=12,column=1)
@@ -119,11 +117,11 @@ class App:
         self.CreatePresenceButtonsWindow = tkinter.Toplevel()
         self.CreatePresenceButtonsWindow.config(bg=Color.dark_gray)
         self.CreatePresenceButtonsWindow.title("Nice DRPC - Create Button")
-        self.ButtonLabel_Label = tkinter.Label(self.CreatePresenceButtonsWindow,text="Button Text: ",font="google 10",justify=RIGHT,bg=Color.dark_gray)
+        self.ButtonLabel_Label = tkinter.Label(self.CreatePresenceButtonsWindow,text="Button Text: ",fg="white",font="google 10",justify=RIGHT,bg=Color.dark_gray)
         self.ButtonLabel_Label.grid(row=0,column=0,pady=5)
         self.ButtonLabel_Entry = tkinter.Entry(self.CreatePresenceButtonsWindow,width=20)
         self.ButtonLabel_Entry.grid(row=0,column=1)
-        self.ButtonUrl_Label = tkinter.Label(self.CreatePresenceButtonsWindow,text="Url:",font="google 10",justify=RIGHT,bg=Color.dark_gray)
+        self.ButtonUrl_Label = tkinter.Label(self.CreatePresenceButtonsWindow,text="Url:",fg="white",font="google 10",justify=RIGHT,bg=Color.dark_gray)
         self.ButtonUrl_Label.grid(row=1,column=0,pady=5)
         self.ButtonUrl_Entry = tkinter.Entry(self.CreatePresenceButtonsWindow,width=20)
         self.ButtonUrl_Entry.grid(row=1,column=1)
@@ -242,28 +240,28 @@ class App:
         self.EditPresenceWindow.geometry("500x330")
         self.EditPresenceWindow.config(bg=Color.dark_gray)
         #Entrys
-        self.clientId_Label = tkinter.Label(self.EditPresenceWindow,text="*Client ID",font="google 10",justify=LEFT,bg=Color.dark_gray).grid(row=0,column=0)
+        self.clientId_Label = tkinter.Label(self.EditPresenceWindow,text="*Client ID",fg="white",font="google 10",justify=LEFT,bg=Color.dark_gray).grid(row=0,column=0)
         self.clientId_Entry = tkinter.Entry(self.EditPresenceWindow,width=30,textvariable=tkinter.StringVar(self.EditPresenceWindow,presenceFile["client_id"]))
         self.clientId_Entry.grid(row=1,column=0)
-        self.ShowTime_Label = tkinter.Label(self.EditPresenceWindow,text="Show Time Playing (True/False)",font="google 10",justify=LEFT,bg=Color.dark_gray).grid(row=0,column=1)
+        self.ShowTime_Label = tkinter.Label(self.EditPresenceWindow,text="Show Time Playing (True/False)",fg="white",font="google 10",justify=LEFT,bg=Color.dark_gray).grid(row=0,column=1)
         self.ShowTime_Entry = tkinter.Entry(self.EditPresenceWindow,width=30,textvariable=tkinter.StringVar(self.EditPresenceWindow,presenceFile["show_time"]))
         self.ShowTime_Entry.grid(row=1,column=1)
-        self.state_Label = tkinter.Label(self.EditPresenceWindow,text="State",font="google 10",justify=LEFT,bg=Color.dark_gray).grid(row=2,column=0)
+        self.state_Label = tkinter.Label(self.EditPresenceWindow,text="State",fg="white",font="google 10",justify=LEFT,bg=Color.dark_gray).grid(row=2,column=0)
         self.state_Entry = tkinter.Entry(self.EditPresenceWindow,width=30,textvariable=tkinter.StringVar(self.EditPresenceWindow,presenceFile["state"]))
         self.state_Entry.grid(row=3,column=0)
-        self.details_Label = tkinter.Label(self.EditPresenceWindow,text="Details",font="google 10",justify=LEFT,bg=Color.dark_gray).grid(row=2,column=1)
+        self.details_Label = tkinter.Label(self.EditPresenceWindow,text="Details",fg="white",font="google 10",justify=LEFT,bg=Color.dark_gray).grid(row=2,column=1)
         self.details_Entry = tkinter.Entry(self.EditPresenceWindow,width=30,textvariable=tkinter.StringVar(self.EditPresenceWindow,presenceFile["details"]))
         self.details_Entry.grid(row=3,column=1)
-        self.largeImage_Label = tkinter.Label(self.EditPresenceWindow,text="Large Image",font="google 10",justify=LEFT,bg=Color.dark_gray).grid(row=4,column=0)
+        self.largeImage_Label = tkinter.Label(self.EditPresenceWindow,text="Large Image",fg="white",font="google 10",justify=LEFT,bg=Color.dark_gray).grid(row=4,column=0)
         self.largeImage_Entry = tkinter.Entry(self.EditPresenceWindow,width=30,textvariable=tkinter.StringVar(self.EditPresenceWindow,presenceFile["large_image"]))
         self.largeImage_Entry.grid(row=5,column=0)
-        self.smallImage_Label = tkinter.Label(self.EditPresenceWindow,text="Small Image (Large Image is obligatory)",font="google 10",justify=LEFT,bg=Color.dark_gray).grid(row=4,column=1)
+        self.smallImage_Label = tkinter.Label(self.EditPresenceWindow,text="Small Image (Large Image is obligatory)",fg="white",font="google 10",justify=LEFT,bg=Color.dark_gray).grid(row=4,column=1)
         self.smallImage_Entry = tkinter.Entry(self.EditPresenceWindow,width=30,textvariable=tkinter.StringVar(self.EditPresenceWindow,presenceFile["small_image"]))
         self.smallImage_Entry.grid(row=5,column=1)
-        self.largeText_Label = tkinter.Label(self.EditPresenceWindow,text="Large Text (Large Image is obligatory)",font="google 10",justify=LEFT,bg=Color.dark_gray).grid(row=6,column=0)
+        self.largeText_Label = tkinter.Label(self.EditPresenceWindow,text="Large Text (Large Image is obligatory)",fg="white",font="google 10",justify=LEFT,bg=Color.dark_gray).grid(row=6,column=0)
         self.largeText_Entry = tkinter.Entry(self.EditPresenceWindow,width=30,textvariable=tkinter.StringVar(self.EditPresenceWindow,presenceFile["large_text"]))
         self.largeText_Entry.grid(row=7,column=0)
-        self.smallText_Label = tkinter.Label(self.EditPresenceWindow,text="Small Text (Small Image is obligatory)",font="google 10",justify=LEFT,bg=Color.dark_gray).grid(row=6,column=1)
+        self.smallText_Label = tkinter.Label(self.EditPresenceWindow,text="Small Text (Small Image is obligatory)",fg="white",font="google 10",justify=LEFT,bg=Color.dark_gray).grid(row=6,column=1)
         self.smallText_Entry = tkinter.Entry(self.EditPresenceWindow,width=30,textvariable=tkinter.StringVar(self.EditPresenceWindow,presenceFile["small_text"]))
         self.smallText_Entry.grid(row=7,column=1)
         #Buttons
@@ -274,7 +272,7 @@ class App:
         else:self.Buttons2_Label = tkinter.Button(self.EditPresenceWindow,text="Destroy Button",command=lambda:self.DeleteDestroyPresenceButtons(1,self.EditPresenceWindow),width=20)
         self.Buttons2_Label.grid(row=8,column=1,columnspan=1,rowspan=1,padx=10,pady=15)
         #Save presence
-        self.nameLabel = tkinter.Label(self.EditPresenceWindow,text="Save presence as",font="google 10 bold",justify=LEFT,bg=Color.dark_gray).grid(row=11,column=0)
+        self.nameLabel = tkinter.Label(self.EditPresenceWindow,text="Save presence as",fg="white",font="google 10 bold",justify=LEFT,bg=Color.dark_gray).grid(row=11,column=0)
         self.nameEntry = tkinter.Entry(self.EditPresenceWindow,width=25,textvariable=tkinter.StringVar(self.EditPresenceWindow,selectedPresence),state="readonly")
         self.nameEntry.grid(row=12,column=0,columnspan=1,padx=5)
         self.NewPresenceButton = tkinter.Button(self.EditPresenceWindow,text="Save Presence", command=lambda:self.SavePresence(self.EditPresenceWindow),width=20).grid(row=12,column=1)
@@ -287,9 +285,9 @@ class App:
         self.ConfirmWindow = tkinter.Toplevel()
         self.ConfirmWindow.title("Nice DRPC - Waiting for response")
         self.ConfirmWindow.config(bg=Color.dark_gray)
-        self.ConfirmLabel = tkinter.Label(self.ConfirmWindow,text='Are you sure you want to delete the presence "{0}"?'.format(selectedPresence),font="google 10 bold",bg=Color.dark_gray).grid(row=0,column=0,columnspan=2)
-        self.ConfirmButtonYes = tkinter.Button(self.ConfirmWindow,text="Yes",font="google 10 bold",bg=Color.dark_gray,command=lambda: self.DeletePresence(selectedPresence)).grid(row=1,column=0,sticky=W+E)
-        self.ConfirmButtonNo = tkinter.Button(self.ConfirmWindow,text="No",font="google 10 bold",bg=Color.dark_gray,command=lambda: self.ConfirmWindow.destroy()).grid(row=1,column=1,sticky=W+E)
+        self.ConfirmLabel = tkinter.Label(self.ConfirmWindow,text='Are you sure you want to delete the presence "{0}"?'.format(selectedPresence),fg="white",font="google 10 bold",bg=Color.dark_gray).grid(row=0,column=0,columnspan=2)
+        self.ConfirmButtonYes = tkinter.Button(self.ConfirmWindow,text="Yes",fg="white",font="google 10 bold",bg=Color.dark_gray,command=lambda: self.DeletePresence(selectedPresence)).grid(row=1,column=0,sticky=W+E)
+        self.ConfirmButtonNo = tkinter.Button(self.ConfirmWindow,text="No",fg="white",font="google 10 bold",bg=Color.dark_gray,command=lambda: self.ConfirmWindow.destroy()).grid(row=1,column=1,sticky=W+E)
     def DeletePresence(self,selectedPresence):
         try:
             os.remove("./config/presences/{0}.json".format(selectedPresence))
@@ -399,12 +397,11 @@ class App:
         self.HelpWindow = tkinter.Toplevel()
         self.HelpWindow.title("Nice DRPC - Help")
         self.HelpWindow.config(bg=Color.dark_gray)
-        self.Info_label = tkinter.Label(self.HelpWindow,text="Thanks for using the app.\nIf you need guidance on how to use the app you can visit the github repository and read the guide I wrote\nIf you have any problems / questions / suggestions you can visit my Discord server and talk to me there!\nRemember that the application is under development, so it is possible to find errors, try to avoid causing them and notify me\nNice-DRPC v2 Windows 10 Build",font="google 10 italic",bg=Color.dark_gray).grid(row=0,column=0,columnspan=2)
-        self.Button1 = tkinter.Button(self.HelpWindow,text="Open Github",font="google 10 bold",bg=Color.dark_gray,command=lambda:webopen("https://github.com/Rex-Hm/Discord-Nice-RPC")).grid(row=1,column=0,sticky=W+E)
-        self.Button1 = tkinter.Button(self.HelpWindow,text="Discord Server",font="google 10 bold",bg=Color.dark_gray,command=lambda:webopen("https://discord.gg/Ccbau6uPmC")).grid(row=1,column=1,sticky=W+E)
+        self.Info_label = tkinter.Label(self.HelpWindow,text="Thanks for using the app.\nIf you need guidance on how to use the app you can visit the github repository and read the guide I wrote\nIf you have any problems / questions / suggestions you can visit my Discord server and talk to me there!\nRemember that the application is under development, so it is possible to find errors, try to avoid causing them and notify me\nNice-DRPC v2 Windows 10 Build",fg="white",font="google 10 italic",bg=Color.dark_gray).grid(row=0,column=0,columnspan=2)
+        self.Button1 = tkinter.Button(self.HelpWindow,text="Open Github",fg="white",font="google 10 bold",bg=Color.dark_gray,command=lambda:webopen("https://github.com/Rex-Hm/Discord-Nice-RPC")).grid(row=1,column=0,sticky=W+E)
+        self.Button1 = tkinter.Button(self.HelpWindow,text="Discord Server",fg="white",font="google 10 bold",bg=Color.dark_gray,command=lambda:webopen("https://discord.gg/Ccbau6uPmC")).grid(row=1,column=1,sticky=W+E)
 
 if __name__ == "__main__":
-    #Create necessary folders
     if os.path.exists("./config") == False:
         os.system("mkdir ./config")
     if os.path.exists("./config/presences") == False:
