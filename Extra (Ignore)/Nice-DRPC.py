@@ -22,28 +22,40 @@ try:
     with open("config.json","r",encoding="utf-8") as config:
         print("Configuration located")
         config = json.load(config)
-        client_id = config["client_id"]
-        state = config["state"]
-        details = config["details"]
-        large_image = config["large_image"]
-        large_text = config["large_text"]
-        small_image = config["small_image"]
-        small_text = config["small_text"]
-        show_time = config["show_time"]
-        buttons = config["buttons"]
-        if state == None and details != None:
-            state = details
-            details = None
-        if show_time == True:show_time = time()
-        else:show_time = None
-        
-        print("Loading RPC")
-        rpc = Presence(client_id)
-        
-        print("Conecting RPC to Discord...")
-        rpc.connect()
-        
-        print("Applying settings")
+    client_id = config["client_id"]
+    state = config["state"]
+    details = config["details"]
+    large_image = config["large_image"]
+    large_text = config["large_text"]
+    small_image = config["small_image"]
+    small_text = config["small_text"]
+    show_time = config["show_time"]
+    buttons = config["buttons"]
+    if state == None and details != None:
+        state = details
+        details = None
+    if show_time == True:show_time = time()
+    else:show_time = None
+    
+    print("Loading RPC")
+    rpc = Presence(client_id)
+    
+    print("Conecting RPC to Discord...")
+    rpc.connect()
+    
+    print("Applying settings")
+    rpc.update(
+        state=state,
+        details=details,
+        large_image=large_image,
+        large_text=large_text,
+        small_image=small_image,
+        small_text=small_text,
+        start=show_time,
+        buttons=buttons
+    )
+    print("RPC Connected successfully")
+    while True:
         rpc.update(
             state=state,
             details=details,
@@ -54,18 +66,6 @@ try:
             start=show_time,
             buttons=buttons
         )
-        print("RPC Connected successfully")
-        while True:
-            rpc.update(
-                state=state,
-                details=details,
-                large_image=large_image,
-                large_text=large_text,
-                small_image=small_image,
-                small_text=small_text,
-                start=show_time,
-                buttons=buttons
-            )
 except Exception as e:
     print("\nAn error has occurred, more information will be displayed below.")
     if config == None:
@@ -87,7 +87,7 @@ except Exception as e:
                     }
                 ]
             }
-            json.dump(preConfig,makeconfig,indent=2,sort_keys=True,ensure_ascii=False,)
+            json.dump(preConfig,makeconfig,indent=2,sort_keys=True,ensure_ascii=False)
         
         print("A config file is missing, it has been added automatically, to configure it read the instructions in the github repository, be sure to do it, once configured reopen the application.")
         
