@@ -9,119 +9,101 @@
  
  __Mac__: Not available (Maybe soon)
 
-# Configuring application
-To configure our RPC we must modify the config.json file located in the same folder as the application,
-to open it we will right click and click on the "open with" option,
-this will show us the list of our applications,
-we will select an editor from text of our preference (Word, Excel, powerpoint and the like do not count, preferably use the default text editor of your system)
-Once our file is open, you will see that there are different boxes where you will be asked to enter certain data,
-now we will proceed to explain how to configure each one.
+# First steps
+(Setting up our RPC is now much easier thanks to the GUI integrated in v2!)
+First of all, to have a custom RPC you need to have a "Discord application,"
+Yes, it sounds complicated, but it is not, do not worry, creating your application will be very simple, then I will leave a series of steps that you must follow to successfully create a Discord application.
 
-
->__CLIENT_ID__
-
-"client_id" is the box where we must enter the ID of our application.
-
-client_id Example: "client_id": "0000000000000"
-
-If you have no idea how to get that ID or how to have an "application" here we will leave you a little explanation.
-You must first go to the Discord developer page and log in.
+### 1. Enter the Discord developer page:
 
 https://discord.com/developers/applications
 
-After logging in, you will click on the "New application" button, and give it a name, (The name of our application will be the title of our RPC)
-We already have our application!
-Once you have the application ready, you can access the "application ID", copy that number and save it in client_id, as shown in the previous example, between quotes.
+When you enter the page you will find an interface like this, you must go to the upper right, next to your profile photo and click on "New application"
+![ 23_06_21 22:55:31](https://user-images.githubusercontent.com/77251557/123190554-23654180-d476-11eb-83aa-cc520e027414.png)
 
->__STATE AND DETAILS__
+### 2. Create the Discord aplicacition
 
-"state" is the box where the subtitle of our RPC will be saved, in case of also having the "details" box filled, state will be located below details, as if it were a description.
+Then a box like this will appear asking us to enter a name, which will be the title of our Rich Presence, (We can change the name at any time from the same page)
+In this case I will enter "My Presence", you can enter the name you want.
+![ 23_06_21 22:57:54](https://user-images.githubusercontent.com/77251557/123190713-73dc9f00-d476-11eb-8c13-8bd20effaff4.png)
 
-state Example: "state" : "Hi"
+### 3. Get ID
 
-details Example: "details" : "Hello"
+Well, once we have the application created we must save its ID, which will help us to connect the rich presence from the application.
+To obtain the ID we must select our application and go to the general information section, where within the first labels we will see a call "Application ID", which contains a moderate amount of numbers, we will copy it and once done we can proceed to customize our Rich Presence
+![imagen](https://user-images.githubusercontent.com/77251557/123191447-a3d87200-d477-11eb-90cb-c4ba5a80206a.png)
 
->__LARGE_IMAGE__
+## Configuring RPC from Nice-DRPC
 
-"large_image" will be our main RPC image, to add an image to our RPC we must first go to the configuration of our application, enter the "Rich Presence"> "Art Assets" section and add our image, after adding the image we will have to fill "large_image" with the name of the image that we want to appear.
-Example: We have added an image called "MyPresenceImage" in the "Art Assets" in "large_image" we will proceed to put something like this:
+When you enter the application for the first time you will see that you have a list of presences, that's right! You can save your custom RPCs and use them whenever you want in the future! (You can keep an unlimited amount of RPC)
+![ 23_06_21 23:12:30](https://user-images.githubusercontent.com/77251557/123192018-7dff9d00-d478-11eb-881b-aaf57fbb10e5.png)
 
-"large_image" : "MyPresenceImage"
+To create our first presence we must give the button located in the upper right part of the screen that says "New presence", this will open a menu that will contain several boxes that we must fill in depending on how we want our Rich Presence to look. 
+![ 23_06_21 23:15:47](https://user-images.githubusercontent.com/77251557/123192285-f5cdc780-d478-11eb-8a06-7df015011d53.png)
 
->__LARGE_TEXT__
+Do you remember the ID of the app we created earlier? You must put the ID of your application in the first box, this step is mandatory for Rich Presence to work correctly.
+Next I will give a brief explanation and demonstration of each frame and its function.
 
-"large_text" is a box where we must enter the text that we want to show when we hover the mouse over our "large_image".
+### Client ID
 
-large_text Example: "large_text" : "Nice"
+The client ID of our application, allows connection with Discord, it is mandatory
 
->__SMALL_IMAGE__
+### Show Time Playing
 
-"small_image" works in a similar way to "large_image", it is a small image displayed in the shape of a circle on the lower side of "large_image", here you must place the name of some previously added Art Assets as with "large_image", how it works is the same.
+Decide whether to show the time you have been active with Rich Presence, by default it is False
 
-small_image Example: "small_image" : "MyPresenceImage"
+### State
 
->__SMALL_TEXT__
+State is the description of our presence, by default it is null
 
-It works in the same way as "large_text" here you must enter the text that you want to show when hovering the mouse over the "small_image"
+### Details
 
-small_text Example: "small_text" : "Nice Small"
+details becomes the second description of our presence, (although it is located above state)
 
->__SHOW_TIME__
+### Large Image
 
-This box must be marked with true or false depending on whether or not we want to show how long we have been running the RPC.
+here will go the name of our asset that contains the large image that we want to show in our rich presence
 
-show_time Example: "show_time" : true
+### Small Image
 
-show_time Example2: "show_time" : false
+here will go the name of our asset that contains the small image that we want to show in our rich presence
 
->__BUTTONS__
+### Large Text
 
-This configuration will allow us to add various buttons linked to pages in our rich presence, this is a little more complicated to configure.
-first we will have to open and close some brackets like this \[]
+here will go the text that we want to show when we hover the mouse over the large image, it is mandatory to define the image before
 
-then inside we will open and close some keys like this: \[{}]
+### Small Text
 
-Inside the keys we will add 2 parameters separated by commas, one will be "label" where we will save the text of the button and another "url" where we will save the link of the page of our button, we must configure it to be something like this:
+here will go the text that we want to show when we hover the mouse over the small image, it is mandatory to define the image before
 
-\[{"label": "My Button", "url": "https://discord.com"}]
+### Buttons
 
-With this we will have a button, to add multiple buttons we will have to open other keys within the same brackets, separating the keys from the previous button in such a way that it looks something like this:
+We have the possibility of creating 2 buttons for our presence, we must specify the text of the button and the url to which it will take us.
 
-\[{"label": "My Button", "url": "https://discord.com"}, {"label": "My Button 2", "url": "https://discord.com"}]
+### Save presence as
 
-# Extra Notes:
+Here will go the name with which we will save the presence, the text entered here will not influence our rich presence, it is a way of classifying it.
 
-any text must have a minimum of 2 characters (2 spaces do not count)
+## Add images to Rich Presence
 
-If you want to not show any parameter such as "large_image", just replace the content with null, something like this:
-"large_image": null
+To add an asset we will have to go to the RichPresence> ArtAssets section within our Discord application, we will click on the "add image" button, we will select the assets to upload, and we will give it a name of our choice, since later it will not be possible change the name, (unless you delete the asset and upload it again)
+![ 24_06_21 01:20:47](https://user-images.githubusercontent.com/77251557/123202138-6c26f580-d48a-11eb-8d5d-8387e2bf2b6c.png)
+Once you have uploaded the asset, you will have to wait a few minutes for discord to finish processing it, and you will be able to use your image for your custom RPC! (To use the image, you must put the name of the asset you want to show in its respective box, Large Image or Small Image)
 
-When you write a text you must put it in quotes, the terms true, false and null should not be enclosed in quotes.
+# Extra Notes
 
-Then I will leave an example of RPC configuration in case it is not clear yet how to configure the parameters.
+Don't try to open the same window 2 times, example:
 
+> 2 "new presence" windows.
 
-	{
-			"buttons": [
-					{
-							"label": "Discord Page",
-							"url": "https://discord.com"
-					}
-			],
-			"client_id": "000000000000000000",
-			"details": None,
-			"large_image": "MyPresenceImage",
-			"large_text": "This is my RPC image",
-			"show_time": false,
-			"small_image": null,
-			"small_text": null,
-			"state": "Nice"
-	}
+> 2 "new button" windows.
 
+> 2 "edit presence" windows.
 
+this will cause the application to understand that it should ignore the previous window, so it is preferable to avoid it.
 
-> By RexHm
->
-> Discord ID: 612122239428722720
+Avoid bugs at all costs, and if you run into one it is appreciated if you can share it on my server so I try to find a solution.
 
-> report bugs or leave your suggestions here: https://discord.gg/Ccbau6uPmC
+Currently this is v2 of the project.
+
+I plan to do another rewrite (v3) solving all the bugs that I have found so far and could not solve, and give better performance.
