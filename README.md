@@ -1,5 +1,9 @@
 # A easy Discord Rich Presence
- A nice Rich Presence for Discord that you can customize as you like. 
+ A nice Rich Presence for Discord that you can customize as you like.
+
+### What is an RPC / Rich Presence?
+
+Discord has a function that allows us to show presence in our profile when we play games, this is called Rich Presence, with Rich Presence we can communicate what activities we are doing and do it in a visually attractive way.
 
 ### Advantages:
 
