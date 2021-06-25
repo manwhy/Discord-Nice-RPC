@@ -1,6 +1,16 @@
 # A easy Discord Rich Presence
  A nice Rich Presence for Discord that you can customize as you like. 
- only available for Windows 10 onwards, I'm not sure if it will ever have support for Windows 7, at least not the version with Python. 
+ only available for Windows 10 onwards, I'm not sure if it will ever have support for Windows 7, at least not the version with Python.
+
+#### Advantages:
+
+-Has a save system
+
+-Easy to use interface
+
+-Manual that explains how to use it in detail
+
+I hope you enjoy it
  
  # Downloads
  __Windows 10__: https://github.com/Rex-Hm/Discord-Nice-RPC/releases/download/v2/Nice-DRPC-Windows.exe
