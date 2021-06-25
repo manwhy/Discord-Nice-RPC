@@ -2,14 +2,12 @@
  A nice Rich Presence for Discord that you can customize as you like. 
  only available for Windows 10 onwards, I'm not sure if it will ever have support for Windows 7, at least not the version with Python. 
  
- Project paused, maybe rewrite in another language soon
- 
  # Downloads
- __Windows 10__: Not avaible
+ __Windows 10__: https://github.com/Rex-Hm/Discord-Nice-RPC/releases
  
  __Linux__: https://github.com/Rex-Hm/Discord-Nice-RPC/releases
  
- __Mac__: Not available
+ __Mac__: Not available (Maybe soon)
 
 # First steps
 (Setting up our RPC is now much easier thanks to the GUI integrated in v2!)
@@ -109,3 +107,7 @@ Avoid bugs at all costs, and if you run into one it is appreciated if you can sh
 Currently this is v2 of the project.
 
 I plan to do another rewrite (v3) solving all the bugs that I have found so far and could not solve, and give better performance.
+
+By RexHm
+Discord ID: 612122239428722720
+If you need help, have any suggestions or questions, you can always come to my server and I will try to help you out.
