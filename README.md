@@ -18,7 +18,7 @@ I hope you enjoy it
  
  __Mac__: Not available (Maybe soon)
  
- #### For Windows users: If Windows Defender Antivirus marks the application as a virus, do not worry that it is a virus detection error, it is very common for this to happen in Windows 10, you can tell Antivirus to decide to ignore the application and use it without problems. I'm not sure if it will ever have support for Windows 7, at least not the version with Python.
+ #### For Windows users: If  Antivirus marks the application as a virus, do not worry that it is a virus detection error, it is very common for this to happen in Windows, you can tell Antivirus to decide to ignore the application and use it without problems. I'm not sure if it will ever have support for Windows 7, at least not the version with Python.
 
 # First steps
 (Setting up our RPC is now much easier thanks to the GUI integrated in v2!)
