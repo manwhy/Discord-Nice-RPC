@@ -146,11 +146,9 @@ class App:
         self.ButtonsList[b]=ButtonData
         self.DeleteCreateButton_AppearDestroyButton(b,window)
         self.CreatePresenceButtonsWindow.destroy()
-        print(self.ButtonsList[b])
     
     def DeleteDestroyPresenceButtons(self,b,window):
         self.ButtonsList[b] = None
-        print(self.ButtonsList[b])
         self.DeleteDestroyButton_AppearCreateButton(b,window)
 
     def SavePresence(self,window):
@@ -403,9 +401,9 @@ class App:
 
 if __name__ == "__main__":
     if os.path.exists("./config") == False:
-        os.system("mkdir ./config")
+        os.mkdir("config")
     if os.path.exists("./config/presences") == False:
-        os.system("mkdir ./config/presences")
+        os.mkdir("config/presences")
     #Init Colors
     Color = Colors()
     #Init GUI
