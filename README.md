@@ -3,9 +3,9 @@
  only available for Windows 10 onwards, I'm not sure if it will ever have support for Windows 7, at least not the version with Python. 
  
  # Downloads
- __Windows 10__: https://github.com/Rex-Hm/Discord-Nice-RPC/releases
+ __Windows 10__: https://github.com/Rex-Hm/Discord-Nice-RPC/releases/download/v2/Nice-DRPC-Windows.exe
  
- __Linux__: https://github.com/Rex-Hm/Discord-Nice-RPC/releases
+ __Linux__: https://github.com/Rex-Hm/Discord-Nice-RPC/releases/download/v2/Nice-DRPC-Linux.py
  
  __Mac__: Not available (Maybe soon)
 
