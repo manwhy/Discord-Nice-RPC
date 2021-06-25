@@ -107,3 +107,7 @@ Avoid bugs at all costs, and if you run into one it is appreciated if you can sh
 Currently this is v2 of the project.
 
 I plan to do another rewrite (v3) solving all the bugs that I have found so far and could not solve, and give better performance.
+
+By RexHm
+Discord ID: 612122239428722720
+If you need help, have any suggestions or questions, you can always come to my server and I will try to help you out.
