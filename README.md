@@ -1,6 +1,5 @@
 # A easy Discord Rich Presence
  A nice Rich Presence for Discord that you can customize as you like. 
- only available for Windows 10 onwards, I'm not sure if it will ever have support for Windows 7, at least not the version with Python.
 
 #### Advantages:
 
