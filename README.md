@@ -18,6 +18,8 @@ I hope you enjoy it
  __Linux__: https://github.com/Rex-Hm/Discord-Nice-RPC/releases/download/v2/Nice-DRPC-Linux.py
  
  __Mac__: Not available (Maybe soon)
+ 
+ I'm not sure if it will ever have support for Windows 7, at least not the version with Python.
 
 # First steps
 (Setting up our RPC is now much easier thanks to the GUI integrated in v2!)
