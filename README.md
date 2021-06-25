@@ -16,13 +16,13 @@ Discord has a function that allows us to show presence in our profile when we pl
 I hope you enjoy it
  
  # Downloads
- __Windows 10__: https://github.com/Rex-Hm/Discord-Nice-RPC/releases/download/v2/Nice-DRPC-Windows.exe
+ __Windows 8/10/11__: https://github.com/Rex-Hm/Discord-Nice-RPC/releases/download/v2/Nice-DRPC-Windows.exe
  
  __Linux__: https://github.com/Rex-Hm/Discord-Nice-RPC/releases/download/v2/Nice-DRPC-Linux.py
  
  __Mac__: Not available (Maybe soon)
  
- #### For Windows users: If  Antivirus marks the application as a virus, do not worry that it is a virus detection error, it is very common for this to happen in Windows, you can tell Antivirus to decide to ignore the application and use it without problems. I'm not sure if it will ever have support for Windows 7, at least not the version with Python.
+ #### For Windows users: If  Antivirus marks the application as a virus, do not worry that it is a virus detection error, it is very common for this to happen in Windows, you can tell Antivirus to decide to ignore the application and use it without problems. I have not tested my application in Windows 8, there may be a certain probability that it does not work. I'm not sure if it will ever have support for Windows 7, at least not the version with Python.
 
 # First steps
 (Setting up our RPC is now much easier thanks to the GUI integrated in v2!)
